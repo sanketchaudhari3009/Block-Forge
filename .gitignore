@@ -1,7 +1,3 @@
-# Ignore all files except .go files
-*
-!.gitignore
-!*.go
 
 # Ignore any build or binary files
 *.exe
