@@ -1,3 +1,4 @@
+/blockchain/hash.go
 
 # Ignore any build or binary files
 *.exe
