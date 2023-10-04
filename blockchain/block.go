@@ -1,9 +1,6 @@
 package blockchain
 
 import (
-	"crypto/sha256"
-	"encoding/hex"
-	"encoding/json"
 	"time"
 )
 
@@ -23,11 +20,7 @@ type BookCheckout struct {
 }
 
 func (b *Block) GenerateHash() {
-	bytes, _ := json.Marshal(b.Data)
-	data := string(b.Pos) + b.Timestamp + string(bytes) + b.PrevHash
-	hash := sha256.New()
-	hash.Write([]byte(data))
-	b.Hash = hex.EncodeToString(hash.Sum(nil))
+	GenerateComplexHash(b)
 }
 
 func CreateBlock(prevBlock *Block, checkoutItem BookCheckout) *Block {
